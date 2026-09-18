@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1b35">
+  <meta name="description" content="How startups fill SIG and CAIQ security spreadsheets: keep the buyer’s workbook, map rows to a reviewed answer library, and skip unofficial question-set downloads.">
+  <meta property="og:title" content="SIG and CAIQ spreadsheet filler for startups">
+  <meta property="og:description" content="SIG (Shared Assessments) and CAIQ (Cloud Security Alliance) are different questionnaires. Both usually arrive as spreadsheets. Fill them from a library—do not rebuild the file.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bradkissler-lgtm.github.io/questvault-waitlist-landing/guides/sig-caiq-spreadsheet-filler-for-startups/">
+  <link rel="canonical" href="https://bradkissler-lgtm.github.io/questvault-waitlist-landing/guides/sig-caiq-spreadsheet-filler-for-startups/">
+  <title>SIG and CAIQ spreadsheet filler for startups | QuestVault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../app.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"SIG and CAIQ spreadsheet filler for startups","dateModified":"2026-09-18","publisher":{"@type":"Organization","name":"QuestVault"}}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../../" aria-label="QuestVault home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>QuestVault</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Toggle navigation</span><i></i><i></i><i></i></button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="../">Guides</a>
+        <a href="../../#how-it-works">How it works</a>
+        <a href="../../#pricing">Pricing</a>
+        <a href="../../#faq">FAQ</a>
+        <a class="nav-cta" href="https://bradkissler-lgtm.github.io/questvault-waitlist-landing/?utm_source=seo&amp;utm_medium=organic&amp;utm_campaign=week1_support#waitlist">Join the waitlist <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="guide-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../">Guides</a>
+          <span aria-hidden="true">/</span>
+          <span>SIG / CAIQ spreadsheet filler</span>
+        </nav>
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Supporting guide</p>
+        <h1>SIG and CAIQ spreadsheet filler for startups</h1>
+        <p class="guide-lede">Once you sell to banks, insurers, health plans, or large tech buyers, the file in the email is often a SIG-style workbook or a CAIQ spreadsheet. They are not the same questionnaire. The filler workflow is the same: map to your library, write into their cells, review, send.</p>
+        <div class="guide-meta">
+          <span>Updated September 2026</span>
+          <span>Does not reproduce SIG or CAIQ question sets</span>
+        </div>
+      </div>
+    </section>
+
+    <article class="container guide-article">
+      <ol class="guide-toc" aria-label="On this page">
+        <li><a href="#two-questionnaires">Two questionnaires, two publishers</a></li>
+        <li><a href="#what-arrives">What usually arrives</a></li>
+        <li><a href="#filler-workflow">Spreadsheet filler workflow</a></li>
+        <li><a href="#startup-constraints">Startup constraints</a></li>
+        <li><a href="#tooling">Where a filler tool helps</a></li>
+      </ol>
+
+      <h2 id="two-questionnaires">Two questionnaires, two publishers</h2>
+      <p><strong>SIG</strong> is the Standardized Information Gathering questionnaire from <a href="https://sharedassessments.org/">Shared Assessments</a>. It is a third-party risk questionnaire. Shared Assessments publishes scoped variants such as SIG Lite (often used for lower-risk or first-pass reviews) and SIG Core (deeper scope for higher-risk or data-heavy vendors), plus custom scoping from their content library. The official question set is licensed. This page does not reproduce it. You should be skeptical of any “free SIG download” that claims to be the real thing.</p>
+      <p><strong>CAIQ</strong> is the Consensus Assessments Initiative Questionnaire from the <a href="https://cloudsecurityalliance.org/blog/2021/09/01/what-is-caiq">Cloud Security Alliance</a>. CSA describes it as a downloadable spreadsheet of yes/no questions mapped to the Cloud Controls Matrix (CCM), used by IaaS, PaaS, and SaaS providers to document which cloud security controls exist. CSA is explicit that CAIQ itself is not a certification. STAR Level 1 uses a CAIQ submission to the STAR Registry; that is a separate program from “we filled a customer’s spreadsheet.”</p>
+      <p>Buyers still mix them in the same due-diligence packet, alongside custom Excel. Your <a href="../security-questionnaire-answer-bank-for-saas/">answer bank</a> should be control-centric so one encryption row can serve a SIG-style prompt, a CAIQ yes/no plus comment, and a homegrown VSA cell.</p>
+      <div class="guide-note">
+        <p><strong>Licensing and accuracy.</strong> Use the file the customer sent, or the current official artifact from Shared Assessments or CSA. Do not scrape question text into a public repo. Your reusable asset is the answer, evidence pointer, owner, and date.</p>
+      </div>
+
+      <h2 id="what-arrives">What usually arrives in the inbox</h2>
+      <ul>
+        <li><strong>A multi-tab Excel workbook.</strong> SIG-style files often split risk domains across tabs. Rebuilding those tabs in Google Docs is wasted motion and a formatting defect for the buyer’s reviewer.</li>
+        <li><strong>Drop-downs and IDs.</strong> Yes / No / N/A lists, control IDs, and “if no, explain” columns. Overwrite a validated cell with free text and you create cleanup work on their side.</li>
+        <li><strong>Comments and evidence requests.</strong> CAIQ-style sheets may ask for yes/no plus shared-responsibility or implementation notes. A bare “Yes” without a citation is a follow-up waiting to happen.</li>
+        <li><strong>A deadline that assumes you have done this before.</strong> You have, if the library exists. You have not, if last quarter’s file is the only copy of the truth.</li>
+      </ul>
+
+      <h2 id="filler-workflow">Spreadsheet filler workflow</h2>
+      <p>A “filler” is a process—and optionally software—that places your reviewed language into the inbound file. It is not a license to skip reading the question.</p>
+      <ol>
+        <li><strong>Freeze the source file.</strong> Save the customer’s original. Work on a copy. Never lose their IDs.</li>
+        <li><strong>Inventory the columns they care about.</strong> Answer, comment, evidence, owner, applicability. Fill what they asked, not what your internal template wishes they asked.</li>
+        <li><strong>Map each row to the library.</strong> High-confidence matches become suggested fills. Novel architecture questions go to the owner. Do not auto-fill a shared-responsibility item with a first-party-only paragraph.</li>
+        <li><strong>Write into their cells.</strong> Keep tab structure. If a tool exports XLSX, the export should round-trip the original layout as closely as practical. Merged cells and macros are where automation gets sloppy; check those tabs by hand.</li>
+        <li><strong>Human review of sensitive and stale rows.</strong> Anything touching customer data paths, access, incident response, or subprocessors needs a current date. Anything with an exception needs the exception text, not a recycled “yes.”</li>
+        <li><strong>Attach evidence separately when asked.</strong> The spreadsheet points; the PDF or policy lives in the packet. Do not paste an entire audit report into a comment cell.</li>
+      </ol>
+      <p>This is the same method as the <a href="../stop-reanswering-security-questionnaires/#spreadsheet-method">spreadsheet method in the pillar guide</a>, specialized for named industry workbooks.</p>
+
+      <h2 id="startup-constraints">Startup constraints the enterprise playbook ignores</h2>
+      <ul>
+        <li><strong>You may not have an in-house GRC writer.</strong> The owner of production access is also the person filling column G. The library has to make a 20-minute review possible.</li>
+        <li><strong>You may not have every control a SIG Core assumes.</strong> Answer the scope you actually operate. N/A with a reason is more defensible than theatre.</li>
+        <li><strong>CAIQ yes/no without comments reads as incomplete</strong> to many cloud buyers even when the spec allows a short answer. Keep a comment snippet on the library row.</li>
+        <li><strong>Budget.</strong> Public list prices for questionnaire automation suites start at $6,000 per year (HyperComply Respond AI, &lt;50 FTE, AWS Marketplace) and $9,600 per year starting (Conveyor Business). A startup filling a handful of workbooks a quarter should not treat that as the default first purchase. See <a href="../hypercomply-conveyor-alternatives-early-saas/">the alternatives comparison</a>.</li>
+      </ul>
+
+      <h2 id="tooling">Where a filler tool helps</h2>
+      <p>Software is useful when matching and export are slower than writing. Look for:</p>
+      <ul>
+        <li>Upload of past Q&amp;A in XLSX or CSV.</li>
+        <li>Suggested fills from <em>your</em> library, not generic web text.</li>
+        <li>A review state before export.</li>
+        <li>Export back to XLSX.</li>
+      </ul>
+      <p>Software is the wrong buy when the inbound work is a web portal with no spreadsheet, or when you need a vendor’s analyst to import and polish under an SLA. Those are jobs for portal-centric or full-service platforms.</p>
+      <p>QuestVault is being designed as the XLSX-shaped answer bank: upload, suggest, review, export. <strong>It is early access and not live SaaS yet.</strong> Draft prices are $49 and $79 per month on the waitlist page and may change. It will not claim to be an official SIG or CAIQ product, and it will not complete questionnaires without a reviewer.</p>
+
+      <div class="related-block">
+        <h2>Related guides</h2>
+        <div class="related-grid">
+          <a class="related-card" href="../stop-reanswering-security-questionnaires/">
+            <p class="eyebrow">Pillar</p>
+            <h3>Stop re-answering every cycle</h3>
+            <p>Cost bands, DIY bank, and when a filler is worth buying.</p>
+          </a>
+          <a class="related-card" href="../security-questionnaire-answer-bank-for-saas/">
+            <p class="eyebrow">Library</p>
+            <h3>Answer bank for SaaS</h3>
+            <p>The columns SIG and CAIQ mapping actually needs.</p>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <section class="section-pad guide-cta-wrap">
+      <div class="container">
+        <div class="guide-cta-card">
+          <p class="eyebrow eyebrow-light">Early access</p>
+          <h2>Fill the next workbook from a library.</h2>
+          <p>If your constraint is XLSX in and XLSX out—with review—join the QuestVault waitlist. Draft product. Not an official SIG or CAIQ publisher. Not live SaaS yet.</p>
+          <a class="button button-primary" href="https://bradkissler-lgtm.github.io/questvault-waitlist-landing/?utm_source=seo&amp;utm_medium=organic&amp;utm_campaign=week1_support#waitlist">Join the waitlist <span aria-hidden="true">→</span></a>
+          <p class="guide-cta-note">Bring the buyer’s file. Keep their IDs.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a class="brand brand-footer" href="../../"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>QuestVault</span></a>
+      <div class="footer-links">
+        <a href="../">Guides</a>
+        <a href="../../#how-it-works">Product</a>
+        <a href="../../#pricing">Pricing</a>
+        <a href="../../#faq">FAQ</a>
+        <a href="https://bradkissler-lgtm.github.io/questvault-waitlist-landing/?utm_source=seo&amp;utm_medium=organic&amp;utm_campaign=week1_support#waitlist">Early access</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>Draft product — early access waitlist. Not live SaaS yet.</p>
+      <p>© <span id="current-year">2026</span> QuestVault. Product details and pricing may change.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1b35">
+  <meta name="description" content="How early B2B SaaS teams build a security questionnaire answer bank: canonical answers, evidence pointers, owners, review status, and mapping into the buyer’s file.">
+  <meta property="og:title" content="A security questionnaire answer bank for SaaS teams">
+  <meta property="og:description" content="The library structure that stops copy-paste from stale workbooks—without claiming a GRC platform or a live product you do not have yet.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bradkissler-lgtm.github.io/questvault-waitlist-landing/guides/security-questionnaire-answer-bank-for-saas/">
+  <link rel="canonical" href="https://bradkissler-lgtm.github.io/questvault-waitlist-landing/guides/security-questionnaire-answer-bank-for-saas/">
+  <title>A security questionnaire answer bank for SaaS teams | QuestVault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../app.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"A security questionnaire answer bank for SaaS teams","dateModified":"2026-09-18","publisher":{"@type":"Organization","name":"QuestVault"}}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../../" aria-label="QuestVault home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>QuestVault</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Toggle navigation</span><i></i><i></i><i></i></button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="../">Guides</a>
+        <a href="../../#how-it-works">How it works</a>
+        <a href="../../#pricing">Pricing</a>
+        <a href="../../#faq">FAQ</a>
+        <a class="nav-cta" href="https://bradkissler-lgtm.github.io/questvault-waitlist-landing/?utm_source=seo&amp;utm_medium=organic&amp;utm_campaign=week1_support#waitlist">Join the waitlist <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="guide-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../">Guides</a>
+          <span aria-hidden="true">/</span>
+          <span>Answer bank for SaaS</span>
+        </nav>
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Supporting guide</p>
+        <h1>A security questionnaire answer bank for SaaS teams</h1>
+        <p class="guide-lede">An answer bank is not a dump of old Excel files. It is one reviewed library of control statements you can map onto the next buyer spreadsheet without rewriting the security story from scratch.</p>
+        <div class="guide-meta">
+          <span>Updated September 2026</span>
+          <span>QuestVault is early access — not live SaaS yet</span>
+        </div>
+      </div>
+    </section>
+
+    <article class="container guide-article">
+      <ol class="guide-toc" aria-label="On this page">
+        <li><a href="#what-it-is">What an answer bank is</a></li>
+        <li><a href="#columns">Columns that matter</a></li>
+        <li><a href="#saas-shape">How SaaS teams actually use it</a></li>
+        <li><a href="#governance">Review without a GRC team</a></li>
+        <li><a href="#sheet-or-tool">Sheet vs dedicated tool</a></li>
+      </ol>
+
+      <h2 id="what-it-is">What an answer bank is</h2>
+      <p>A security questionnaire answer bank is a governed set of <em>your</em> answers—owned, dated, and cited—used as the source of truth when a customer sends a new VSA, SIG-style workbook, CAIQ spreadsheet, or portal export.</p>
+      <p>It is not:</p>
+      <ul>
+        <li>A folder named “security questionnaires 2024–2026.”</li>
+        <li>A chatbot that invents controls you did not implement.</li>
+        <li>A GRC platform, a policy management suite, or a claim that you hold a particular audit report. If you have a SOC 2 report, cite the relevant section as evidence. If you do not, do not write as if you do.</li>
+        <li>A substitute for legal or security review on novel, sensitive, or out-of-date rows.</li>
+      </ul>
+      <p>The commercial reason to build one is simple: inbound questions overlap. Encryption, identity, logging, incident response, subprocessors, and backup recur. The wording changes. Your control should not.</p>
+      <p>This sits inside the broader workflow in <a href="../stop-reanswering-security-questionnaires/">How to stop re-answering security questionnaires every sales cycle</a>.</p>
+
+      <h2 id="columns">Columns that make answers reusable</h2>
+      <p>Copy a “yes” without context and it expires. Keep the fields below and the same sentence can survive the next file.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Why it exists</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Topic / domain</td>
+              <td>Grouping for search: access, encryption, privacy, resilience, vendors. Use your taxonomy; you do not need to reproduce a licensed questionnaire’s domains.</td>
+            </tr>
+            <tr>
+              <td>Canonical answer</td>
+              <td>The approved wording. Written for reuse, then lightly edited to match the buyer’s prompt.</td>
+            </tr>
+            <tr>
+              <td>Evidence / citation</td>
+              <td>Where a reviewer can check the claim: policy title and section, architecture note, ticket, or report section. A URL or filename beats “see Slack.”</td>
+            </tr>
+            <tr>
+              <td>Owner</td>
+              <td>The person who can defend the row. On an early team this is often a founder, CS lead, or the engineer who runs production access.</td>
+            </tr>
+            <tr>
+              <td>Reviewer / status</td>
+              <td>Draft, needs review, reviewed, exception. Status is how you stop shipping a half-edited cell.</td>
+            </tr>
+            <tr>
+              <td>Last verified</td>
+              <td>The date someone confirmed the control still matches reality. Stale dates are a queue, not a decoration.</td>
+            </tr>
+            <tr>
+              <td>Scope notes</td>
+              <td>Product, environment, region, or shared-responsibility boundaries. SaaS answers go wrong when they describe the customer’s cloud as if it were yours, or vice versa.</td>
+            </tr>
+            <tr>
+              <td>Exception / compensating control</td>
+              <td>Honest gaps with a dated plan. Inventing a control to close a deal is worse than a clear “not yet.”</td>
+            </tr>
+            <tr>
+              <td>Customer-specific overlay</td>
+              <td>Stored off the canonical row so one logo’s contractual language does not leak into the next workbook.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="guide-note">
+        <p><strong>Do not paste licensed questionnaires into a public template.</strong> SIG content is licensed by Shared Assessments. CAIQ is published by the Cloud Security Alliance for use as their spreadsheet. Your bank holds <em>answers and evidence</em>. The inbound file from the buyer holds their questions.</p>
+      </div>
+
+      <h2 id="saas-shape">How SaaS teams actually use it</h2>
+      <p>Early B2B SaaS usually has three people in the loop: whoever owns the customer relationship, whoever can speak to production, and whoever will be blamed if a sentence is wrong. The bank has to survive that split.</p>
+      <ol>
+        <li><strong>Ingest past Q&amp;A.</strong> XLSX and CSV are the native formats. Pull pairs from completed customer files. Tag the source file so you can see which deal produced the wording.</li>
+        <li><strong>Deduplicate.</strong> Five answers to “MFA for administrative access” means you do not have a bank; you have an argument. Pick one canonical row and record exceptions separately.</li>
+        <li><strong>Match the new file.</strong> When the next spreadsheet arrives, map each inbound question to the closest library row. Close matches get a suggested fill. Weak matches stay blank.</li>
+        <li><strong>Edit for the prompt.</strong> Buyers use drop-downs, character limits, and “describe / attach evidence.” Your canonical paragraph may need to shrink, split, or point to an attachment. That is editing, not authorship from zero.</li>
+        <li><strong>Export in their shape.</strong> Return XLSX (or the portal’s export) with their IDs intact. Internal pretty-print is optional. Their template is not.</li>
+      </ol>
+      <p>For SIG and CAIQ specifically—the two named industry spreadsheets that show up once you sell to larger buyers—see <a href="../sig-caiq-spreadsheet-filler-for-startups/">SIG and CAIQ spreadsheet filler for startups</a>.</p>
+
+      <h2 id="governance">Review without a GRC team</h2>
+      <p>You do not need a six-person GRC org to keep a bank honest. You need rules that fit a small team:</p>
+      <ul>
+        <li><strong>No send from “draft.”</strong> Suggested fills start as draft. Export is for reviewed rows plus explicitly accepted edits.</li>
+        <li><strong>Material change triggers.</strong> New subprocessor, new region, new identity provider, or a production incident: re-verify the affected topics the same week.</li>
+        <li><strong>Blank is allowed.</strong> A blank cell with an owner follow-up is cleaner than a confident sentence you cannot cite.</li>
+        <li><strong>The bank does not certify you.</strong> Completing questionnaires is not the same as holding an audit opinion. Do not imply certifications you have not been issued.</li>
+      </ul>
+      <p>QuestVault’s intended workflow matches this shape: upload past Q&amp;A, organize with tags, review suggested fills, export XLSX. <strong>The product is early access and not live SaaS yet.</strong> It will not auto-complete questionnaires or replace human judgment. Draft Starter and Team prices ($49 / $79 per month on the waitlist page) are not final.</p>
+
+      <h2 id="sheet-or-tool">When a sheet is enough—and when it is not</h2>
+      <p>Stay in Sheets or Excel while one person can still find the row, the date is current, and inbound volume is occasional. Move to a dedicated answer-bank tool when matching and review status are the bottleneck, or when CS and security are editing two copies of the truth.</p>
+      <p>Do not jump to an enterprise questionnaire suite just because the library is messy. Public list prices for those suites start around $6,000–$9,600 per year depending on vendor and SKU; see the <a href="../stop-reanswering-security-questionnaires/#cost-bands">public cost-band table</a>. If you actually need portal filling or a trust center, that is a different purchase—covered in <a href="../hypercomply-conveyor-alternatives-early-saas/">HyperComply and Conveyor alternatives for early SaaS</a>.</p>
+
+      <div class="related-block">
+        <h2>Related guides</h2>
+        <div class="related-grid">
+          <a class="related-card" href="../stop-reanswering-security-questionnaires/">
+            <p class="eyebrow">Pillar</p>
+            <h3>Stop re-answering every cycle</h3>
+            <p>Why deals stall, spreadsheet method, and when to buy a filler.</p>
+          </a>
+          <a class="related-card" href="../sig-caiq-spreadsheet-filler-for-startups/">
+            <p class="eyebrow">Formats</p>
+            <h3>SIG / CAIQ filler</h3>
+            <p>Map industry spreadsheets onto the bank without rebuilding tabs.</p>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <section class="section-pad guide-cta-wrap">
+      <div class="container">
+        <div class="guide-cta-card">
+          <p class="eyebrow eyebrow-light">Early access</p>
+          <h2>Put the library in a workspace, not another tab.</h2>
+          <p>QuestVault is being built as a reusable answer bank with a required review step. Join the waitlist if that is the job you have. Draft product; not live yet.</p>
+          <a class="button button-primary" href="https://bradkissler-lgtm.github.io/questvault-waitlist-landing/?utm_source=seo&amp;utm_medium=organic&amp;utm_campaign=week1_support#waitlist">Join the waitlist <span aria-hidden="true">→</span></a>
+          <p class="guide-cta-note">No automated send. Your team remains responsible for accuracy.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a class="brand brand-footer" href="../../"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>QuestVault</span></a>
+      <div class="footer-links">
+        <a href="../">Guides</a>
+        <a href="../../#how-it-works">Product</a>
+        <a href="../../#pricing">Pricing</a>
+        <a href="../../#faq">FAQ</a>
+        <a href="https://bradkissler-lgtm.github.io/questvault-waitlist-landing/?utm_source=seo&amp;utm_medium=organic&amp;utm_campaign=week1_support#waitlist">Early access</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>Draft product — early access waitlist. Not live SaaS yet.</p>
+      <p>© <span id="current-year">2026</span> QuestVault. Product details and pricing may change.</p>
+    </div>
+  </footer>
+</body>
+</html>
