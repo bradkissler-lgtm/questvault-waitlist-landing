@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1b35">
+  <meta name="description" content="Build a reusable security questionnaire answer bank for your B2B SaaS team. Upload past Q&A, review suggested fills, and export XLSX. Draft product with a 14-day trial.">
+  <meta property="og:title" content="Answer the next security questionnaire from a library">
+  <meta property="og:description" content="QuestVault helps early B2B SaaS teams reuse reviewed answers, edit suggested fills, and export customer-ready XLSX questionnaires.">
+  <meta property="og:type" content="website">
+  <title>QuestVault | Reuse answers for security questionnaires</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>window.QUESTVAULT_CONFIG = { endpoint: "__WAITLIST_ENDPOINT__" };</script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="QuestVault home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>QuestVault</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Toggle navigation</span><i></i><i></i><i></i></button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="#waitlist">Join the waitlist <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section-pad">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Built for early B2B SaaS teams</p>
+          <h1>Answer the next security questionnaire <em>from a library—not from scratch.</em></h1>
+          <p class="hero-lede">QuestVault helps your team reuse past security answers, review suggested fills, and export a clean XLSX for the customer. Keep the human judgment. Lose the repeated searching and retyping.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#waitlist">Join the early-access list <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="hero-note">Draft product. QuestVault is not live yet. Join the list for early access updates.</p>
+        </div>
+        <div class="product-visual" aria-label="Illustration of the QuestVault answer library and review workflow">
+          <div class="visual-glow"></div>
+          <div class="app-window">
+            <div class="window-bar"><div class="window-dots"><span></span><span></span><span></span></div><span class="window-label">Questionnaire workspace</span><span class="window-lock">⌁</span></div>
+            <div class="window-body">
+              <div class="mock-sidebar"><div class="mock-logo"></div><span class="side-line active"></span><span class="side-line"></span><span class="side-line short"></span><span class="side-rule"></span><span class="side-line"></span><span class="side-line short"></span></div>
+              <div class="mock-main">
+                <div class="mock-heading"><div><span class="mock-kicker">ANSWER LIBRARY</span><strong>Your reusable answers</strong></div><span class="mock-avatar">AK</span></div>
+                <div class="mock-stats"><div><span>Library entries</span><b>248</b></div><div><span>Needs review</span><b class="amber">12</b></div></div>
+                <div class="mock-table-head"><span>QUESTION</span><span>STATUS</span></div>
+                <div class="mock-row"><div class="question-line"><span class="question-icon">✓</span><span><b>How is customer data encrypted?</b><small>Infrastructure · Reviewed 2d ago</small></span></div><span class="status-pill">Reviewed</span></div>
+                <div class="mock-row"><div class="question-line"><span class="question-icon">✓</span><span><b>Describe your access controls.</b><small>Security · Reviewed 5d ago</small></span></div><span class="status-pill">Reviewed</span></div>
+                <div class="mock-row"><div class="question-line"><span class="question-icon pending">!</span><span><b>What is your incident response plan?</b><small>Operations · Needs review</small></span></div><span class="status-pill pending-pill">Review</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card"><span class="floating-check">✓</span><span><b>Suggestion ready</b><small>Human review required</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip"><div class="container trust-inner"><span class="trust-label">A practical answer bank for teams that are</span><span>↗ Repeating the same work</span><span>↗ Growing their sales motion</span><span>↗ Not ready for enterprise GRC</span></div></section>
+
+    <section id="how-it-works" class="section-pad how-section">
+      <div class="container">
+        <div class="section-intro"><div><p class="eyebrow">A clearer workflow</p><h2>Turn past work into a head start.</h2></div><p>QuestVault gives your team a repeatable starting point without pretending security judgment can be automated.</p></div>
+        <div class="steps-grid">
+          <article class="step-card"><div class="step-number">01</div><div class="step-icon upload-icon"><span></span><i></i></div><h3>Upload your past Q&amp;A</h3><p>Bring in completed questionnaires from XLSX or CSV. Organize the answers your team has already reviewed with tags and source context.</p><span class="step-link">Build your library <span>→</span></span></article>
+          <article class="step-card"><div class="step-number">02</div><div class="step-icon match-icon"><span></span><span></span><span></span></div><h3>Upload a new questionnaire</h3><p>Add the next XLSX or CSV. QuestVault compares its questions with your answer library and prepares suggested fills.</p><span class="step-link">Find the closest answer <span>→</span></span></article>
+          <article class="step-card"><div class="step-number">03</div><div class="step-icon review-icon"><span>✓</span><i></i></div><h3>Review and export</h3><p>Accept a useful suggestion, edit it for the customer, or leave it blank for follow-up. Export the final XLSX when review is complete.</p><span class="step-link">Keep judgment in the loop <span>→</span></span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section-pad pricing-section">
+      <div class="container pricing-layout"><div class="pricing-copy"><p class="eyebrow">Simple by design</p><h2>Pricing that fits the stage you’re in.</h2><p>Start with a focused answer library, not a $9k+/year enterprise platform. Both plans include a 14-day trial in the current draft.</p><a class="text-link" href="#waitlist">Get launch details <span aria-hidden="true">→</span></a></div><div class="plans"><article class="plan-card"><div class="plan-top"><div><h3>Starter</h3><p>For small teams building their first reusable answer library.</p></div><div class="price"><strong>$49</strong><span>/ month</span></div></div><ul><li>Upload past Q&amp;A in XLSX or CSV</li><li>Organize answers with tags</li><li>Review suggested fills</li><li>Export reviewed questionnaires to XLSX</li></ul><a class="button button-outline" href="#waitlist">Join the waitlist</a></article><article class="plan-card featured"><div class="plan-badge">For growing teams</div><div class="plan-top"><div><h3>Team</h3><p>For founders, CS, and security sharing questionnaire work.</p></div><div class="price"><strong>$79</strong><span>/ month</span></div></div><ul><li>Everything in Starter</li><li>Shared answer library for the team</li><li>Clear review ownership and status</li><li>Practical workspace for recurring reviews</li></ul><a class="button button-primary" href="#waitlist">Get early access</a></article></div></div>
+      <div class="container"><p class="pricing-note"><strong>Draft pricing for review.</strong> Final limits, seats, and feature details may change before launch. QuestVault is not live yet.</p></div>
+    </section>
+
+    <section id="faq" class="section-pad faq-section"><div class="container faq-layout"><div class="faq-heading"><p class="eyebrow">Good questions</p><h2>What teams ask first.</h2><p>QuestVault is intentionally focused: a reusable answer bank with a clear human review step.</p></div><div class="faq-list"><details open><summary>What is QuestVault?<span>+</span></summary><p>QuestVault is a reusable answer bank for security questionnaires. Upload past Q&amp;A, organize the answers, review suggested fills for a new questionnaire, and export the reviewed result as an XLSX.</p></details><details><summary>Who is it for?<span>+</span></summary><p>It is designed for early B2B SaaS teams where a founder, customer success lead, security owner, or small group shares responsibility for customer questionnaires.</p></details><details><summary>Does QuestVault complete questionnaires automatically?<span>+</span></summary><p>No. QuestVault suggests fills from your answer library. A human reviews and edits the answers before export, and your team remains responsible for accuracy.</p></details><details><summary>Is this a GRC or compliance platform?<span>+</span></summary><p>No. QuestVault is a focused questionnaire answer bank. It does not replace a GRC program, security review, legal review, or compliance advice.</p></details></div></div></section>
+
+    <section id="waitlist" class="section-pad waitlist-section"><div class="container waitlist-card"><div class="waitlist-copy"><p class="eyebrow eyebrow-light">Be first in line</p><h2>Build your answer library before the next questionnaire arrives.</h2><p>Join the early-access list for QuestVault updates, launch details, and a chance to help shape the workflow.</p></div><div class="form-panel"><form id="waitlist-form" novalidate><label for="email">Work email</label><div class="input-row"><input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required><button class="button button-light" type="submit">Join the list <span aria-hidden="true">→</span></button></div><label class="consent"><input type="checkbox" name="updates" checked><span>Send me occasional product and early-access updates.</span></label><p class="form-hint">No spam. You can unsubscribe at any time.</p><p id="form-message" class="form-message" role="status" aria-live="polite"></p></form><div id="success-state" class="success-state" hidden><div class="success-icon">✓</div><h3>You’re on the list.</h3><p>Thanks for your interest in QuestVault. We’ll share early-access updates when they’re ready.</p><button type="button" class="text-button" id="reset-form">Add another email</button></div></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-top"><a class="brand brand-footer" href="#top"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>QuestVault</span></a><div class="footer-links"><a href="#how-it-works">Product</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#waitlist">Early access</a></div></div><div class="container footer-bottom"><p>Draft product — early access waitlist. Not live SaaS yet.</p><p>© <span id="current-year">2026</span> QuestVault. Product details and pricing may change.</p></div></footer>
+</body>
+</html>
