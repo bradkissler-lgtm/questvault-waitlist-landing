@@ -48,36 +48,34 @@
       const data = {
         email: emailInput.value.trim().toLowerCase(),
         updates: form.elements.updates.checked,
-        submittedAt: new Date().toISOString()
+        submittedAt: new Date().toISOString(),
+        _subject: "QuestVault waitlist signup",
+        source: "questvault-waitlist-landing"
       };
       const submitButton = form.querySelector("button[type=submit]");
       submitButton.disabled = true;
       submitButton.textContent = "Joining…";
 
-      // Static MVP behavior: retain a local copy even with no configured endpoint.
-      try { saveSubmission(data); } catch (_) {
-        message.textContent = "Your browser blocked local storage. Please try again with storage enabled.";
+      if (!endpoint) {
+        message.textContent = "Signup service is not configured yet. Please try again later.";
         submitButton.disabled = false;
         submitButton.innerHTML = 'Join the list <span aria-hidden="true">→</span>';
         return;
       }
 
-      // Optional production endpoint. Set window.QUESTVAULT_CONFIG.endpoint at build time.
-      if (endpoint) {
-        try {
-          const response = await fetch(endpoint, {
-            method: "POST",
-            headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify(data)
-          });
-          if (!response.ok) throw new Error("Endpoint rejected submission");
-        } catch (_) {
-          // The local submission is retained; do not expose endpoint details to visitors.
-          message.textContent = "Saved locally. We could not reach the signup service just now.";
-          submitButton.disabled = false;
-          submitButton.innerHTML = 'Try again <span aria-hidden="true">→</span>';
-          return;
-        }
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(data)
+        });
+        if (!response.ok) throw new Error("Endpoint rejected submission");
+        try { saveSubmission(data); } catch (_) { /* local backup optional */ }
+      } catch (_) {
+        message.textContent = "Could not reach the signup service. Please try again in a moment.";
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Try again <span aria-hidden="true">→</span>';
+        return;
       }
       showSuccess();
     });
