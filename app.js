@@ -99,6 +99,12 @@
     menuToggle?.setAttribute("aria-expanded", "false");
   }));
 
+  const params = new URLSearchParams(window.location.search);
+  const checkoutBanner = document.querySelector("#checkout-banner");
+  if (checkoutBanner && params.get("checkout") === "success") {
+    checkoutBanner.hidden = false;
+  }
+
   const year = document.querySelector("#current-year");
   if (year) year.textContent = String(new Date().getFullYear());
 })();
