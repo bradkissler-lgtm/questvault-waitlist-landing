@@ -34,6 +34,16 @@
     message.textContent = "";
   }
 
+  function resetSubmitButton(submitButton, labelHtml) {
+    submitButton.disabled = false;
+    submitButton.innerHTML = labelHtml;
+  }
+
+  function fail(submitButton, text) {
+    message.textContent = text;
+    resetSubmitButton(submitButton, 'Try again <span aria-hidden="true">→</span>');
+  }
+
   if (form) {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -45,11 +55,22 @@
         return;
       }
 
+      // Honeypot: bots fill hidden _gotcha; real users leave it empty.
+      const gotcha = form.elements._gotcha;
+      if (gotcha && String(gotcha.value || "").trim() !== "") {
+        showSuccess();
+        return;
+      }
+
+      const email = emailInput.value.trim().toLowerCase();
       const data = {
-        email: emailInput.value.trim().toLowerCase(),
+        email,
+        _replyto: email,
         updates: form.elements.updates.checked,
         submittedAt: new Date().toISOString(),
         _subject: "QuestVault waitlist signup",
+        _template: "table",
+        _captcha: "false",
         source: "questvault-waitlist-landing"
       };
       const submitButton = form.querySelector("button[type=submit]");
@@ -58,8 +79,7 @@
 
       if (!endpoint) {
         message.textContent = "Signup service is not configured yet. Please try again later.";
-        submitButton.disabled = false;
-        submitButton.innerHTML = 'Join the list <span aria-hidden="true">→</span>';
+        resetSubmitButton(submitButton, 'Join the list <span aria-hidden="true">→</span>');
         return;
       }
 
@@ -69,12 +89,34 @@
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify(data)
         });
-        if (!response.ok) throw new Error("Endpoint rejected submission");
+
+        let payload = null;
+        try {
+          payload = await response.json();
+        } catch (_) {
+          payload = null;
+        }
+
+        // FormSubmit returns JSON like { success: true|false, message: "..." }.
+        // Do NOT treat bare HTTP 2xx as proof Bradley received email.
+        const apiOk = payload && payload.success === true;
+        if (!response.ok || !apiOk) {
+          const apiMessage = payload && typeof payload.message === "string" ? payload.message : "";
+          if (response.status === 429 || /rate limit/i.test(apiMessage)) {
+            fail(submitButton, "Signup service is busy (rate limited). Please try again in a few minutes.");
+            return;
+          }
+          if (/activat|confirm|verify/i.test(apiMessage)) {
+            fail(submitButton, "Signup is waiting on FormSubmit activation. The site owner must click the activation email once.");
+            return;
+          }
+          fail(submitButton, apiMessage || "Could not reach the signup service. Please try again in a moment.");
+          return;
+        }
+
         try { saveSubmission(data); } catch (_) { /* local backup optional */ }
       } catch (_) {
-        message.textContent = "Could not reach the signup service. Please try again in a moment.";
-        submitButton.disabled = false;
-        submitButton.innerHTML = 'Try again <span aria-hidden="true">→</span>';
+        fail(submitButton, "Could not reach the signup service. Please try again in a moment.");
         return;
       }
       showSuccess();
